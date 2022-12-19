@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-dashbard',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashbardComponent implements OnInit {
 
-  constructor() { }
+  public users:any = [];
+  constructor(private api : ApiService, private auth: AuthService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.api.getUsers()
+    .subscribe(res=>{
+      this.users = res;
+    })
   }
+
+  logout(){
+    this.auth.signOut();
+    
+  }
+
 
 }

@@ -1,1 +1,11 @@
-<p>dashbard works!</p>
+<button (click)="logout()" class="btn btn-danger">Log out</button>
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Navbar</a>
+    <div>
+        <span> hello omayma</span>
+    </div>
+  </nav>
+
+<ul *ngFor="let user of users">
+    <li>{{user.username}}</li>
+</ul>
