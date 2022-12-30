@@ -7,7 +7,7 @@ import {JwtHelperService} from '@auth0/angular-jwt'
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl:string = "https://localhost:7250/api/User/"
+  private baseUrl:string = "https://localhost:7068/api/User/"
   private userPayload:any;
   constructor(private http : HttpClient, private router: Router) { 
     this.userPayload = this.decodedToken();
